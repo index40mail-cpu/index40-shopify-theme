@@ -1,0 +1,62 @@
+{%- style -%}
+.product-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+.product-page h1 {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+.product-page .price {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #4298b5;
+  margin-bottom: 1.5rem;
+}
+.product-page .desc {
+  font-size: 1.05rem;
+  color: #4a5568;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.product-page form button {
+  padding: 1rem 3rem;
+  background: #2d3748;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .3s;
+}
+.product-page form button:hover {
+  background: #4298b5;
+  transform: translateY(-2px);
+}
+{%- endstyle -%}
+
+<div class="product-page">
+  <h1>{{ product.title }}</h1>
+  <div class="price">{{ product.price | money }}</div>
+  <div class="desc">{{ product.description }}</div>
+  {%- form 'product', product -%}
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+    <button type="submit">Obtenir mon rapport complet</button>
+  {%- endform -%}
+</div>
+
+{% schema %}
+{
+  "name": "Product Page",
+  "settings": []
+}
+{% endschema %}

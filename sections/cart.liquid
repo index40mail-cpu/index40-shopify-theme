@@ -1,0 +1,23 @@
+<div style="max-width:600px;margin:0 auto;padding:4rem 2rem;font-family:'Inter',sans-serif;text-align:center;">
+  {%- if cart.item_count > 0 -%}
+    <h1 style="font-family:'Red Hat Display',sans-serif;font-size:2rem;font-weight:800;color:#2d3748;margin-bottom:2rem;">Votre panier</h1>
+    {%- for item in cart.items -%}
+      <div style="padding:1.5rem;background:#f8f9fb;border-radius:12px;margin-bottom:1rem;">
+        <p style="font-weight:700;font-size:1.1rem;color:#2d3748;">{{ item.product.title }}</p>
+        <p style="font-size:1.3rem;font-weight:800;color:#4298b5;margin-top:.5rem;">{{ item.line_price | money }}</p>
+      </div>
+    {%- endfor -%}
+    <a href="/checkout" style="display:inline-block;padding:1rem 3rem;background:#2d3748;color:#fff;border-radius:100px;font-weight:700;text-decoration:none;margin-top:1rem;transition:all .3s;">Payer {{ cart.total_price | money }}</a>
+  {%- else -%}
+    <h1 style="font-family:'Red Hat Display',sans-serif;font-size:2rem;font-weight:800;color:#2d3748;margin-bottom:1rem;">Panier vide</h1>
+    <p style="color:#4a5568;margin-bottom:2rem;">Passez le test pour découvrir votre profil.</p>
+    <a href="/" style="padding:.8rem 2rem;background:#2d3748;color:#fff;border-radius:100px;font-weight:700;text-decoration:none;">Retour à l'accueil</a>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": []
+}
+{% endschema %}

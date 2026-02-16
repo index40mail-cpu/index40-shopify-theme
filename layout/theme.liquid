@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page_description | default: shop.description }}">
+  <title>{{ page_title | default: shop.name }}</title>
+
+  <link rel="icon" href="{{ 'favicon.ico' | asset_url }}" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Red+Hat+Display:wght@700;800;900&display=swap" rel="stylesheet">
+
+  {%- comment -%}
+    CRITICAL: content_for_header injects Shopify's native tracking:
+    - Meta CAPI (server-side)
+    - Google Ads Enhanced Conversions
+    - Shopify Analytics
+    - Checkout tracking
+    - Customer event pixels
+    This is THE reason you moved to Shopify. Do NOT remove this.
+  {%- endcomment -%}
+  {{ content_for_header }}
+</head>
+<body>
+  {{ content_for_layout }}
+</body>
+</html>

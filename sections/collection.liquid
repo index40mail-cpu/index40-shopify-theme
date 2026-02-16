@@ -1,0 +1,16 @@
+<div style="max-width:800px;margin:0 auto;padding:4rem 2rem;font-family:'Inter',sans-serif;">
+  <h1 style="font-family:'Red Hat Display',sans-serif;font-size:2rem;font-weight:800;color:#2d3748;margin-bottom:2rem;">{{ collection.title }}</h1>
+  {%- for product in collection.products -%}
+    <a href="{{ product.url }}" style="display:block;padding:1.5rem;background:#f8f9fb;border-radius:12px;margin-bottom:1rem;text-decoration:none;color:#2d3748;">
+      <p style="font-weight:700;font-size:1.1rem;">{{ product.title }}</p>
+      <p style="color:#4298b5;font-weight:800;margin-top:.3rem;">{{ product.price | money }}</p>
+    </a>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": []
+}
+{% endschema %}

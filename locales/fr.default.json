@@ -1,0 +1,13 @@
+{
+  "general": {
+    "404": {
+      "title": "Page introuvable",
+      "subtext": "Cette page n'existe pas."
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Panier"
+    }
+  }
+}
