@@ -1,14 +1,1 @@
-{
-  "sections": {
-    "index40_landing": {
-      "type": "index40-landing",
-      "settings": {
-        "api_endpoint": "https://your-api.com/lookup-profile",
-        "test_url": "/pages/test"
-      }
-    }
-  },
-  "order": [
-    "index40_landing"
-  ]
-}
+{"sections":{"index40_landing":{"type":"index40-landing","settings":{"api_endpoint":"https://your-api.com/lookup-profile","test_url":"/pages/test"}}},"order":["index40_landing"]}
